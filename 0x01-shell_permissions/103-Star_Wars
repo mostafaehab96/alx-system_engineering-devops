@@ -1,2 +1,2 @@
 #!/bin/bash
-telnet StarWars IV
+mpv StarWars IV
