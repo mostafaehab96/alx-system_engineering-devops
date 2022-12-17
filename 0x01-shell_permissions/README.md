@@ -64,15 +64,15 @@
      chgrp school hello
     ```
 100. Write a script that changes the owner to vincent and the group owner to staff for all the files and directories in the working directory.
-    
+    ```
     chown -R vincent:staff
-    
+    ```
 101. Write a script that changes the owner and the group owner of _hello to vincent and staff respectively. _hello is a symbolic link
-    
+    ```
     chown -h vincent:staff
-    
+    ```
 102. Write a script that changes the owner of the file hello to betty only if it is owned by the user guillaume.
-
-    chown --from=guillaume betty hello
-   
+```
+     chown --from=guillaume betty hello
+   ```
 
