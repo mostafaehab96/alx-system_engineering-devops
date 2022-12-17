@@ -28,7 +28,7 @@
     
     chmod 754 hello or chmod ug+x,o+r hello
     
-7.Write a script that adds execution permission to the owner, the group owner and the other users, to the file hello
+7. Write a script that adds execution permission to the owner, the group owner and the other users, to the file hello
     
     chmod +x
     
