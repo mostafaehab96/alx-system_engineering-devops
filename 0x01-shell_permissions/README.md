@@ -68,11 +68,11 @@
     chown -R vincent:staff
     ```
 101. Write a script that changes the owner and the group owner of _hello to vincent and staff respectively. _hello is a symbolic link
-    ```
-    chown -h vincent:staff
-    ```
-102. Write a script that changes the owner of the file hello to betty only if it is owned by the user guillaume.
-```
-     chown --from=guillaume betty hello
    ```
+   chown -h vincent:staff
+   ```
+102. Write a script that changes the owner of the file hello to betty only if it is owned by the user guillaume.
+     ```
+     chown --from=guillaume betty hello
+     ```
 
