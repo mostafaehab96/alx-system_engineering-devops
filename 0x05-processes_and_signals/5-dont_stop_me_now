@@ -2,5 +2,5 @@
 #Stop the 4-to_infinity_and_beyond program
 
 
-pid=$(pgrep -f 4-to_infinity_and_beyond)
+pid=$(pgrep -f './4-to_infinity_and_beyond')
 kill "$pid"
