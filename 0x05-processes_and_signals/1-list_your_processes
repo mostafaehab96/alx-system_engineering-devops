@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #Displays specific informations about running processes
 
-ps -u
+ps ux
