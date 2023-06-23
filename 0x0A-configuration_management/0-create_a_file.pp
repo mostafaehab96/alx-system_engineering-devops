@@ -1,9 +1,8 @@
 #This puppet creates a file named school at /tmp directory
 # and gives it the following attributes
-file { 'school' :
-  path    => '/tmp/school',
+file { '/tmp/school' :
   mode    => '0744',
   owner   => 'www-data',
   group   => 'www-data',
-  content => 'I love puppet',
+  content => 'I love Puppet',
 }
