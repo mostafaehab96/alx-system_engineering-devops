@@ -1,0 +1,6 @@
+#This is a configuration file for connecting to my server
+
+Host ubuntu
+    HostName 52.201.157.19
+    User ubuntu
+    IdentityFile ~/.ssh/school
