@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script creates a new RSA keypair with some modifications
+
+ssh-keygen -b 4096 -f "./school" -N "betty"
