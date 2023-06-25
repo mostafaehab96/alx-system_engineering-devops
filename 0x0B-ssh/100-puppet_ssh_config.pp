@@ -2,10 +2,9 @@
 
 
 $configs = "
-Host ubuntu
-    HostName 52.201.157.19
-    User ubuntu
+Host *
     IdentityFile ~/.ssh/school
+	PasswordAuthentication no
 "
 
 file { '/etc/ssh/ssh_config':
