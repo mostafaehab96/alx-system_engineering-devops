@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#Installs the Apache server
+
+ip="$(curl ifconfig.me)"
+
+sudo sed -i "s/#ServerName www.example.com/ServerName $ip/" /etc/apache2/sites-available/000-default.conf
+
+sudo service apache2 restart;
