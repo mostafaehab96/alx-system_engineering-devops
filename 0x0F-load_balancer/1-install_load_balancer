@@ -5,10 +5,14 @@ sudo apt -y update
 sudo apt -y install haproxy
 
 configs="
-backend web-servers
+backend web-backend
     balance roundrobin
     server 203580-web-01 52.201.157.19:80
     server 203580-web-02 100.26.230.29:80
+
+frontend load_balancer
+    bind *:80
+    default_backend web-backend
 "
 sudo chown -R $USER:$USER /etc/default/haproxy
 sudo chown -R $USER:$USER /etc/haproxy/haproxy.cfg
