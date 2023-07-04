@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #Installs a HAproxy
 
-#sudo apt -y update
-#sudo apt -y install haproxy
+sudo apt -y update
+sudo apt -y install haproxy
 
 configs="\nbackend web-servers
     balance roundrobin
