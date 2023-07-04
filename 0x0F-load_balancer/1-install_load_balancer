@@ -10,4 +10,5 @@ configs="\nbackend web-servers
     server 203580-web-02 100.26.230.29:80
 "
 sudo chown -R $USER:$USER /etc/haproxy/haproxy.cfg
-sudo echo "$configs" >> /etc/haproxy/haproxy.cfg 
+sudo echo "$configs" >> /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
