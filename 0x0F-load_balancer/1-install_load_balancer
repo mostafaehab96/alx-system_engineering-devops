@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#Installs a HAproxy
+
+#sudo apt -y update
+#sudo apt -y install haproxy
+
+configs="\nbackend web-servers
+    balance roundrobin
+    server 203580-web-01 52.201.157.19:80
+    server 203580-web-02 100.26.230.29:80
+"
+sudo chown -R $USER:$USER /etc/haproxy/haproxy.cfg
+sudo echo "$configs" >> /etc/haproxy/haproxy.cfg 
