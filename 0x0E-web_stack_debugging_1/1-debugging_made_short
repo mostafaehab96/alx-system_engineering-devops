@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #Fixing nginx to be able to listen to port 80
-
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 service nginx restart
+echo "" > /run/nginx.pid
