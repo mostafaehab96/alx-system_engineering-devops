@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#Display information about subdomains.
+
+
+display_inf () {
+	sub=${2:-www}
+	domain=$1
+
+	dig "$sub.$domain" | grep -A1 'ANSWER SECTION:' | awk -v awk_sub="$sub" 'NR>1 {print "The subdomain " awk_sub " is a " $4 " record and points to " $5}'
+
+	return 0
+}
+
+
+display_inf "$1" "$2"
+
+if [ -z "$2" ]; then
+	display_inf "$1" "lb-01"
+	display_inf "$1" "web-01"
+	display_inf "$1" "web-02"
+fi
