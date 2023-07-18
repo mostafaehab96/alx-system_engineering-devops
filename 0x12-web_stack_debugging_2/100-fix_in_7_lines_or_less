@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#Configure the user of nginx to nginx and listen to port 8080
+sudo sed -i 's/^.user.*/user nginx;/' /etc/nginx/nginx.conf
+sudo sed -i '/default_server/d' /etc/nginx/sites-available/default
+sudo sed -i '/^server {/a\\n\tlisten 8080 default_server;\n\tlisten [::]:8080 default_server ipv6only=on;' /etc/nginx/sites-available/default
+sudo service nginx restart
