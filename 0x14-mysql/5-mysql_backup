@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Creates mysql dump file named backup.sql that contains all mysql database
+#and a tar.gz file of that backup
+
+current_date=$(date +'%d-%m-%Y')
+
+mysqldump -u root -p"$1" --all-databases > backup.sql
+
+tar -czvf "$current_date.tar.gz" backup.sql
