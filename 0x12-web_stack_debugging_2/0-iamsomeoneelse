@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Running a command with another user
 
-runuser -l "$1" -c "whoami" 2>/dev/null
+sudo -H -u "$1" bash -c 'whoami'
