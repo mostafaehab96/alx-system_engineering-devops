@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 # Running a command with another user
-
 sudo -H -u "$1" bash -c 'whoami'
