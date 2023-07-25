@@ -29,4 +29,4 @@ if __name__ == "__main__":
 
             print(f"Employee {name} is done with tasks({completed}/{total}):")
             for title in titles:
-                print(f"\t{title}")
+                print(f"\t {title}")
