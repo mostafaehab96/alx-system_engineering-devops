@@ -5,12 +5,12 @@ from https://jsonplaceholder.typicode.com/"""
 
 if __name__ == "__main__":
     import requests
-    import sys
+    from sys import argv
 
     url = "https://jsonplaceholder.typicode.com/users/"
-    ID = sys.argv[1] if len(sys.argv) > 1 else None
-    if ID:
-        user_url = url + ID
+    user_id = argv[1] if len(argv) > 1 else None
+    if user_id:
+        user_url = url + user_id
         todos_url = user_url + "/todos"
 
         user = requests.get(user_url).json()
