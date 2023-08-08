@@ -4,6 +4,22 @@
 import requests
 
 
+def count_word(post, word_list, word_count):
+    if len(word_list) > 0:
+        title = post.get('data').get('title')
+        word_l = word_list[0].lower()
+        count = title.lower().count(word_l)
+        if count:
+            word_count[word_l] = count + word_count.get(word_l, 0)
+        count_word(post, word_list[1::], word_count)
+
+
+def count_all(posts, word_list, word_count):
+    if len(posts) > 0:
+        count_word(posts[0], word_list, word_count)
+        count_all(posts[1::], word_list, word_count)
+
+
 def count_words(subreddit, word_list, params=None, word_count={}):
     with open('mytoken', 'r') as file:
         mytoken = file.read().strip('\n')
@@ -18,13 +34,7 @@ def count_words(subreddit, word_list, params=None, word_count={}):
 
     if res.status_code == 200:
         posts = res.json().get('data').get('children')
-        for post in posts:
-            title = post.get('data').get('title').lower()
-            for word in word_list:
-                word_l = word.lower()
-                count = title.count(word_l)
-                if count:
-                    word_count[word_l] = count + word_count.get(word_l, 0)
+        count_all(posts, word_list, word_count)
         after = res.json().get('data').get('after')
         if after:
             params = {'after': after}
