@@ -21,15 +21,10 @@ def count_all(posts, word_list, word_count):
 
 
 def count_words(subreddit, word_list, params=None, word_count={}):
-    with open('mytoken', 'r') as file:
-        mytoken = file.read().strip('\n')
+    headers = {'User-Agent': 'alxAPI'}
 
-    headers = {
-                'User-Agent': 'alxAPI/0.0.1',
-                'Authorization': 'bearer {}'.format(mytoken)
-              }
-
-    res = requests.get('https://oauth.reddit.com/r/{}/hot'.format(subreddit),
+    res = requests.get('https://www.reddit.com/r/{}/hot.json'
+                       .format(subreddit),
                        headers=headers, allow_redirects=False, params=params)
 
     if res.status_code == 200:

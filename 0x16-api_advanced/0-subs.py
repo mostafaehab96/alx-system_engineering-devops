@@ -5,15 +5,10 @@ import requests
 
 
 def number_of_subscribers(subreddit):
-    with open('mytoken', 'r') as file:
-        mytoken = file.read().strip('\n')
 
-    headers = {
-                'User-Agent': 'alxAPI/0.0.1',
-                'Authorization': 'bearer {}'.format(mytoken)
-              }
-
-    res = requests.get('https://oauth.reddit.com/r/{}/about'.format(subreddit),
+    headers = {'User-Agent': 'alxAPI'}
+    res = requests.get('https://www.reddit.com/r/{}/about.json'
+                       .format(subreddit),
                        headers=headers, allow_redirects=False)
 
     if res.status_code == 200:
