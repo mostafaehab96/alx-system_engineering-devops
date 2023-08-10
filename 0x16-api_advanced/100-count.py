@@ -2,6 +2,7 @@
 
 """Prints a sorted count of given keywords in each hot title from subreddit."""
 import requests
+import time
 
 
 def count_word(post, word_list, word_count):
@@ -40,3 +41,6 @@ def count_words(subreddit, word_list, params=None, word_count={}):
                                 reverse=True))
             for k, v in sorted_count.items():
                 print('{}: {}'.format(k, v))
+    elif res.status_code == 429:
+        time.sleep(1)
+        count_words(subreddit, word_list, params, word_count)
