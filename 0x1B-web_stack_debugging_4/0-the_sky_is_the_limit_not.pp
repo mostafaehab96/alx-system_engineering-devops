@@ -1,5 +1,5 @@
 # Changes the upper limit of open files in nginx
 
-exec {"sudo sed -i 's/-n 15/-n 4096/g' /etc/default/nginx":
+exec {"sudo sed -i '/^ULIMIT/s/^ULIMIT.*/ULIMIT=\"n -4096\"/' /etc/default/nginx":
   path  => '/usr/bin',
 }
